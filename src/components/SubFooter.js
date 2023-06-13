@@ -22,8 +22,8 @@ const SubFooter = () => {
       <div className="sub2">
         <div className="speak">Speak to our team</div>
         <div className="socials">
-          <img src={Discord} alt="Discord" />
           <img src={Twitter} alt="Twitter" />
+          <img src={Discord} alt="Discord" />
         </div>
         <div className="mail">support@loanlink.xyz</div>
       </div>
