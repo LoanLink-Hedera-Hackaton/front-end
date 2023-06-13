@@ -27,7 +27,7 @@ const Footer = () => {
   const renderLinks = footerLinks.map((value, index) => {
     return (
       <ul>
-        <li style={{ listStyle: "none" }}>
+        <li style={{ listStyle: "none" }} className="Flex">
           <Link key={index} to={value.path}>
             {value.name}
           </Link>
@@ -41,7 +41,7 @@ const Footer = () => {
         <div className="footer-logo">
           <img src={LoanLink} alt="LoanLink" />
         </div>
-        <Flex gap={"48px"} padding="8px">
+        <Flex gap={"28px"} padding="8px">
           {renderLinks}
         </Flex>
       </Flex>

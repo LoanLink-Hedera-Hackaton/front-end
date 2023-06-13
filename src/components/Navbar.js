@@ -1,21 +1,32 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import LoanLink from "../assets/LoanLink.svg";
-import {
-  Button,
-  Flex,
-  Modal,
-  ModalBody,
-  ModalContent,
-  ModalOverlay,
-  useDisclosure,
-} from "@chakra-ui/react";
+
 import "../components/utils.css";
 import { Link } from "react-router-dom";
-// import MetaMask from "../assets/metamask-logo.svg";
-import Hedera from "../assets/Hedera2.svg";
+// import { AiOutlineSearch } from "react-icons/ai";
+import { FaTimes, FaBars } from "react-icons/fa";
 
 const Navbar = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef();
+  console.log(isMenuOpen);
+  useEffect(() => {
+    // Add event listener to handle click outside of the menu
+    const handleOutsideClick = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    // Attach the event listener
+    document.addEventListener("click", handleOutsideClick);
+
+    // Clean up the event listener on unmount
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
+  }, []);
+
   const navLinks = [
     {
       name: "Home",
@@ -51,58 +62,40 @@ const Navbar = () => {
     <>
       <header>
         <div>
-          <img className="logo" src={LoanLink} alt="LoanLink" />
+          <h1>
+            {" "}
+            <img className="logo" src={LoanLink} alt="LoanLink" />
+          </h1>
         </div>
 
-        <Flex
-          justify="center"
-          width="100%"
-          padding="8px"
-          alignItems="flex-start"
-          gap="48px"
-        >
+        <nav className={`VStack ${isMenuOpen ? "open" : ""}`}>
           {renderLinks}
-        </Flex>
-
-        <div>
-          <button className="navBtn" onClick={onOpen}>
-            Get started
-          </button>
-        </div>
+          <input placeholder="Search" />
+        </nav>
       </header>
-      {/* Modal section with chakraUI */}
-      <Modal blockScrollOnMount={false} isOpen={isOpen} onClose={onClose}>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalBody
-            display={"flex"}
-            flexDirection={"column"}
-            alignItems={"center"}
+
+      {isMenuOpen ? (
+        <>
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className=" menu-close"
           >
-            <div className="connect">
-              <Button>Connect Wallet</Button>
-            </div>
-            <div className="part">
-              <Button>
-                Connect with metamask
-                {/* <MetaMask /> It keeps showing an error when put the image  */}
-              </Button>
-            </div>
-            <div className="modal-text">New to web3?</div>
-            <div className="part hedera">
-              <div>
-                <img src={Hedera} alt="hedera" />
-              </div>
-              <p>
-                We will create a hedera wallet for you and guide through
-                metamask setup
-              </p>
-            </div>
-          </ModalBody>
-        </ModalContent>
-      </Modal>
+            <FaTimes />
+          </button>
+        </>
+      ) : (
+        <>
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="menu-open"
+          >
+            <FaBars />
+          </button>
+        </>
+      )}
     </>
   );
 };
 
 export default Navbar;
+/* <AiOutlineSearch className="search" /> */
