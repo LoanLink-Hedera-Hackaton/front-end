@@ -11,9 +11,9 @@ import Hedera from "../assets/Hedera2.svg";
 import "../components/utils.css";
 import { Link } from "react-router-dom";
 
-const Connect = ({ connectMsg, fcn, status, linkPath }) => {
+const Connect = ({ fcn, status }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  console.log(status);
+
   return (
     <>
       <div className="connectBtn">
@@ -33,21 +33,26 @@ const Connect = ({ connectMsg, fcn, status, linkPath }) => {
             alignItems={"center"}
           >
             <div className="connect">
-              <Button>
-                <Link to={linkPath} target="_blank">
-                  {status ? "Connected" : "Connect Wallet"}
-                </Link>
+              {status ? (
+                ""
+              ) : (
+                <>
+                  {" "}
+                  <Button>Connect wallet</Button>
+                </>
+              )}
+            </div>
+            <div
+              className="part"
+              style={{ display: "flex", flexDirection: "column", gap: "12px" }}
+            >
+              <Button onClick={() => fcn()} className="connect-btn">
+                {status ? "Connected" : "Connect to Hashconnect"}
               </Button>
             </div>
-            <div className="part">
-              <Button onClick={fcn}>
-                <Link>
-                  {connectMsg.slice(0, 7)}...
-                  {connectMsg.slice(connectMsg.length - 5)}
-                </Link>
-              </Button>
+            <div className="modal-text">
+              <Link>New to web3?</Link>
             </div>
-            <div className="modal-text">New to web3?</div>
             <div className="part hedera">
               <div>
                 <img src={Hedera} alt="hedera" />

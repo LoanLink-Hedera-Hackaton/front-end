@@ -10,45 +10,19 @@ import Secure from "../assets/secured-shield.svg";
 import SubFooter from "../components/SubFooter";
 import Footer from "../components/Footer";
 import Connect from "../components/Connect";
-import walletConnectFcn from "../components/hedera/walletConnect";
+import { pairHashpack } from "../components/hashconnect";
 
 const Home = () => {
-  const [walletData, setWalletData] = useState();
-  const [account, setAccount] = useState();
-  const [network, setNetwork] = useState();
+  const [paringString, setParingString] = useState("");
+  const [status, setStatus] = useState(false);
 
-  const [connectTextSt, setConnectTextSt] = useState("Connect to metamask");
-  const [contractTextSt, setContractTextSt] = useState();
-  const [connectStatus, setConnectStatus] = useState(false);
+  const pair = async () => {
+    const saveData = await pairHashpack();
+    setParingString(saveData.pairingString);
+    setStatus(true);
+  };
+  console.log(paringString);
 
-  const [connectLinkSt, setConnectLinkSt] = useState("");
-
-  async function connectWallet() {
-    if (account !== undefined) {
-      setConnectTextSt(`${account} `);
-      setConnectStatus(true);
-    } else {
-      const wData = await walletConnectFcn();
-
-      let newAccount = wData[0];
-      let newNetwork = wData[2];
-      if (newAccount !== undefined) {
-        setConnectTextSt(` ${newAccount}`);
-        setConnectStatus(true);
-        setConnectLinkSt(
-          `https://hashscan.io/${newNetwork}/account/${newAccount}`
-        );
-
-        setWalletData(wData);
-        setAccount(newAccount);
-        setNetwork(newNetwork);
-        setContractTextSt();
-        console.log(`Wallet data: ${walletData}`);
-        console.log(`Network: ${network}`);
-        console.log(`New account: ${contractTextSt}`);
-      }
-    }
-  }
   return (
     <div>
       <section className="home">
@@ -60,12 +34,7 @@ const Home = () => {
             Empowering GLobal Connections: Unleash the Power of Web3 <br />{" "}
             Loans to Fuel Startup Success
           </p>
-          <Connect
-            connectMsg={connectTextSt}
-            fcn={connectWallet}
-            status={connectStatus}
-            linkPath={connectLinkSt}
-          />
+          <Connect fcn={() => pair()} status={status} />
           <div className="powered">
             <span></span>
 

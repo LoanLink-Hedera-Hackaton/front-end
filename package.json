@@ -13,6 +13,7 @@
     "dotenv": "^16.1.4",
     "ethers": "^5.7.2",
     "framer-motion": "^10.12.16",
+    "hashconnect": "^0.2.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.9.0",
