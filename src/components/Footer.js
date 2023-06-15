@@ -2,7 +2,7 @@ import React from "react";
 import LoanLink from "../assets/LoanLink.svg";
 import { Flex } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import "../components/utils.css";
+import "../styles/utils.css";
 
 const Footer = () => {
   const footerLinks = [

@@ -26,7 +26,6 @@ header {
 
 .connectBtn {
   margin: auto;
-  padding-top: 50px;
 }
 .logo {
   position: absolute;
@@ -139,6 +138,9 @@ header {
   align-items: center;
 
   color: #000000;
+}
+.get-started {
+  padding-top: 30px;
 }
 .powered {
   margin-top: 80px;
@@ -304,7 +306,7 @@ footer {
 
 /*Modal section*/
 .connect {
-  padding-bottom: 27px;
+  padding-bottom: 97px;
 }
 .connect Button {
   margin-top: 20px;
@@ -324,7 +326,6 @@ footer {
 .part {
   background: rgba(147, 187, 245, 0.22);
   border-radius: 10px;
-  /* min-width: 400px; */
   width: 100%;
   height: 171px;
   display: flex;
@@ -334,40 +335,40 @@ footer {
 
 .part .connect-btn {
   display: flex;
-  background: #ffc093;
-  border-radius: 5px;
-  width: 280px;
-  height: 73px;
-
-  font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 33px;
-  display: flex;
-  align-items: center;
   text-align: center;
-
-  color: #000000;
+  justify-content: space-between;
+  font-size: 18px;
+  width: 80%;
+  height: 73px;
+  background: rgba(147, 187, 245, 0.22);
+  box-shadow: -1px 4px 4px 1px rgba(68, 82, 102, 0.15);
+  border-radius: 5px;
+}
+.connect-btn img {
+  width: 50px;
 }
 
 .modal-text {
-  padding-top: 30px;
-  padding-bottom: 20px;
+  text-align: center;
+  /* padding-top: 90px;
+  padding-bottom: 20px; */
+  padding: 100px 20px 20px 20px;
+  font-family: "Nunito";
   font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 22px;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 19px;
   display: flex;
   align-items: center;
-  text-align: center;
 
   color: #24334a;
 }
-
+.newLink {
+  font-weight: 800;
+}
 .hedera {
   display: flex;
   flex-direction: column;
-  gap: 10px;
   align-items: center;
   justify-content: center;
   text-align: center;

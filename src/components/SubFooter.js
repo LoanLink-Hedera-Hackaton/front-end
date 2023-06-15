@@ -1,5 +1,5 @@
 import React from "react";
-import "../components/utils.css";
+import "../styles/utils.css";
 import Discord from "../assets/discord.svg";
 import Twitter from "../assets/twitter.svg";
 

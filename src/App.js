@@ -2,6 +2,7 @@ import Home from "./pages/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import GlobalLayout from "./components/GlobalLayout";
 import Dashboard from "./pages/Dashboard";
+import "./styles/utils.css";
 
 function App() {
   return (

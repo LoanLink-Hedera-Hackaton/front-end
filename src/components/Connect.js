@@ -7,9 +7,9 @@ import {
   ModalOverlay,
 } from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/react";
-import Hedera from "../assets/Hedera2.svg";
-import "../components/utils.css";
+import "../styles/utils.css";
 import { Link } from "react-router-dom";
+import HashpackImg from "../assets/HashPack.svg";
 
 const Connect = ({ fcn, status }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -48,18 +48,23 @@ const Connect = ({ fcn, status }) => {
             >
               <Button onClick={() => fcn()} className="connect-btn">
                 {status ? "Connected" : "Connect to Hashconnect"}
+                <img src={HashpackImg} alt="Hashpack" />
               </Button>
             </div>
+
             <div className="modal-text">
-              <Link>New to web3?</Link>
-            </div>
-            <div className="part hedera">
-              <div>
-                <img src={Hedera} alt="hedera" />
-              </div>
               <p>
-                We will create a hedera wallet for you and guide through
-                metamask setup
+                New to Hedera? click here to get{" "}
+                <Link
+                  to={
+                    "https://chrome.google.com/webstore/detail/hashpack/gjagmgiddbbciopjhllkdnddhcglnemk"
+                  }
+                  target="_blank"
+                  className="newLink"
+                >
+                  Hashpack extension
+                </Link>{" "}
+                on your browser
               </p>
             </div>
           </ModalBody>

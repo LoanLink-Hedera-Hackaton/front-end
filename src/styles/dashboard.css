@@ -1,0 +1,385 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+/*Dashboard Header / Nav*/
+
+.dash-nav {
+  width: 98%;
+  left: 22px;
+  top: 0;
+  background: rgba(147, 174, 245, 0.22);
+  border-radius: 20px 20px 0px 0px;
+}
+.accountDetails {
+  display: flex;
+  justify-content: space-between;
+}
+#accountId {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+
+  color: #445266;
+}
+
+/*Dashboard sidebar*/
+.side,
+.poolBtn {
+  display: flex;
+  gap: 60px;
+}
+
+.poolBtn span {
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 0px;
+  left: 120px;
+  border: 1px solid #00245b;
+  transform: rotate(90deg);
+}
+.side-part1 {
+  display: flex;
+  gap: 20px;
+  padding-right: 30px;
+}
+
+.sidebar {
+  box-sizing: border-box;
+  position: absolute;
+  width: 114px;
+  min-height: 100%;
+  left: 23px;
+  top: 90px;
+  background: rgba(52, 76, 112, 0.1);
+  border: 1px solid rgba(68, 82, 102, 0.25);
+  border-radius: 0px 0px 0px 20px;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 48px;
+}
+.icon img {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 2rem 2rem 2rem;
+}
+
+.first {
+  margin-bottom: 210px;
+}
+
+/*Dashboard body - DashPool*/
+
+.dashpool {
+  margin-left: 180px;
+  margin-right: 12px;
+  box-sizing: border-box;
+  max-width: 1220px;
+}
+.poolTitle {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 55px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+  margin-top: 3rem;
+}
+
+.pools {
+  /* display: flex; */
+  /* justify-content: space-between;
+  align-items: center; */
+  margin-top: 20px;
+}
+.poolGLC {
+  position: absolute;
+  top: 200px;
+  right: 10px;
+  margin-top: 10px;
+  display: flex;
+  gap: 20px;
+}
+
+.tabs {
+  background: rgba(208, 216, 227, 0.41);
+  border-radius: 20px;
+  width: 600px;
+}
+.tab {
+  border-radius: 20px;
+  margin: 5px;
+  /* background-color: #ffffff; */
+}
+
+.panels {
+  /* margin-top: 50px; */
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  margin: 4rem 3rem 0 0;
+  padding: 16px 16px 60px 16px;
+  gap: 33px;
+}
+.card-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+/* .calendarBtn {
+  height: 31px;
+} */
+.calendarBtn,
+.GLbtn {
+  background: rgba(255, 255, 255, 0.41);
+  /* box-shadow: -2px 2px 7px rgba(163, 171, 183, 0.47); */
+  border-radius: 5px;
+}
+.bb {
+  color: #2774e8;
+}
+
+/*Pool Card - DashPool - DashBoard*/
+
+.pool-card {
+  width: 320px;
+  box-sizing: border-box;
+}
+.pool-card-img {
+  width: 100%;
+  position: relative;
+}
+.status {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  gap: 10px;
+}
+.status1 {
+  box-sizing: border-box;
+  width: 125px;
+  height: 23px;
+  background: #ffffff;
+  /* background-color: red; */
+  border-radius: 5px;
+}
+.status1 p {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  align-items: center;
+  text-align: center;
+  color: #24334a;
+}
+.status2 {
+  box-sizing: border-box;
+  width: 71px;
+  height: 23px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+.status2 img {
+  width: 14px;
+}
+
+.pool-card-body {
+  width: 100%;
+  /* height: 163px; */
+  height: 100%;
+  background: #ffffff;
+  box-shadow: -1px 4px 7px 1px rgba(36, 51, 74, 0.16);
+  border-radius: 0px 0px 15px 15px;
+}
+.inside-head {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 2rem 2rem 2rem;
+}
+.pool-card-head {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 30px;
+}
+.pool-card-head h2 {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+
+  color: #000000;
+}
+
+.pool-card-head button {
+  background: rgba(147, 187, 245, 0.22);
+  border-radius: 10px;
+  /* padding: 5px; */
+  width: 100px;
+  height: 20px;
+
+  font-style: normal;
+  font-weight: 800;
+  font-size: 10px;
+  line-height: 14px;
+  align-items: center;
+  text-align: center;
+
+  color: #2774e8;
+}
+.pool-card-head button p {
+  text-align: center;
+}
+.progressBar {
+  background: rgba(208, 216, 227, 0.41);
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.pool-card-footer {
+  display: flex;
+  justify-content: space-between;
+  background: rgba(147, 187, 245, 0.22);
+  border-radius: 0px 0px 15px 15px;
+  height: 57px;
+  padding: 12px;
+  /* padding-bottom: 0; */
+  /* padding-top: 15px; */
+}
+.foot {
+  display: flex;
+  flex-direction: column;
+}
+.foot2 {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 12px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+
+  color: #24334a;
+}
+.foot1 {
+  display: flex;
+}
+.foot1 p {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 10px;
+  line-height: 11px;
+  /* identical to box height */
+
+  display: flex;
+  align-items: center;
+
+  color: #24334a;
+}
+
+/*Dash footer component*/
+.dashfooter {
+  position: absolute;
+  margin-left: 140px;
+  /* margin-right: 12px;
+  position: absolute;
+  max-width: 1220px;
+  width: 85%;
+  height: 62px;
+  left: 146px;
+  bottom: -40px;
+  background: rgba(208, 216, 227, 0.41);
+  border-radius: 0px 0px 20px 0px; */
+  width: 85%;
+  height: 62px;
+  left: 22px;
+  bottom: -15%;
+  background: rgba(208, 216, 227, 0.41);
+  border-radius: 0px 0px 20px 0px;
+}
+
+.inner {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+.copy {
+  width: 40px;
+}
+.copy p {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+
+  color: #000000;
+}
+@media (max-width: 1100px) {
+  .poolGLC {
+    display: none;
+  }
+  .first {
+    margin-bottom: 100%;
+  }
+  .dashfooter {
+    bottom: -100px;
+  }
+}
+@media (max-width: 900px) {
+  .dashfooter {
+    bottom: -100px;
+  }
+  .repNav {
+    position: fixed;
+    background-color: red;
+    top: 0;
+    right: 40px;
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    top: -100vh;
+    right: 0;
+    height: 50%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    gap: 1.5rem;
+    background-color: #fff;
+    transition: 1s;
+    transform: translateY(-100vh);
+    color: #2774e8;
+    font-size: 16px;
+    box-shadow: -4px 4px 11px 3px rgba(226, 227, 227, 0.61);
+  }
+}

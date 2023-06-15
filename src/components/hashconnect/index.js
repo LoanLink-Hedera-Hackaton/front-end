@@ -19,9 +19,11 @@ export const pairHashpack = async () => {
   hashconnect.pairingEvent.once((pairingData) => {
     console.log("wallet paired");
     console.log(pairingData);
+    console.log("___________________");
 
-    // const accountId = document.getElementById("accountId");
-    // accountId.innerHTML = pairingData.accountIds[0];
+    const accountId = document.getElementById("accountId");
+    accountId.innerHTML = pairingData.accountIds[0];
+    console.log(pairingData.accountIds[0]);
   });
 
   return initData;
