@@ -34,13 +34,24 @@ header {
   left: 66px;
   top: 15px;
 }
+
+.link {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 25px;
+  display: flex;
+  align-items: center;
+  color: #445266;
+}
+
 .VStack {
   justify-content: center;
   display: flex;
   flex-direction: row;
   padding: 8px;
   align-items: center;
-  gap: 32px;
+  gap: 62px;
 }
 .VStack input {
   background: rgba(36, 51, 74, 0.08);

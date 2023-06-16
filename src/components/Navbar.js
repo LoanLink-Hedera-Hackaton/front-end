@@ -47,7 +47,7 @@ const Navbar = () => {
     return (
       <ul>
         <li style={{ listStyle: "none" }}>
-          <Link key={index} to={value.path}>
+          <Link key={index} to={value.path} className="link">
             {value.name}
           </Link>
         </li>
