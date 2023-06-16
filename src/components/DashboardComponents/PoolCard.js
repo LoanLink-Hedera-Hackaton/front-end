@@ -4,6 +4,7 @@ import LoanAmt from "../../assets/LoanAmount.svg";
 import Timeline from "../../assets/Timeline.svg";
 import interestImg from "../../assets/Interest.svg";
 import peopleIcon from "../../assets/people-icon.svg";
+import { Link } from "react-router-dom";
 
 const PoolCard = ({
   poolImg,
@@ -27,7 +28,7 @@ const PoolCard = ({
             <div className="status2">
               {" "}
               <img src={peopleIcon} alt="people icon" />
-              <p>{funders}</p>
+              <p className="funders">{funders}</p>
             </div>
           </div>
         </div>
@@ -40,15 +41,18 @@ const PoolCard = ({
               </div>
               <div>
                 <button>
-                  <p>Request Loan</p>
+                  <p>
+                    <Link to={"/dashboard/pool/req"}>Request Loan</Link>
+                  </p>
                 </button>
               </div>
             </div>
-            <div>
+            <div className="out-progress">
               <Progress
                 className="progressBar"
                 value={progress}
                 size="xs"
+                height="4px"
                 colorScheme="blue"
                 borderRadius={"20px"}
                 width={"280px"}

@@ -1,6 +1,6 @@
 import React from "react";
 import sideHouse from "../../assets/sideHouse.svg";
-import sidePool from "../../assets/sidePool.svg";
+import sidePool from "../../assets/sidePeople.svg";
 import sideCard from "../../assets/sideCard.svg";
 import sideSheet from "../../assets/sideSheet.svg";
 import sideHeadphone from "../../assets/sideHeadphone.svg";
@@ -12,22 +12,22 @@ const DashSide = () => {
     <section className="sidebar">
       <div className="first">
         <div className="icon">
-          <Link>
+          <Link to={"/dashboard"}>
             <img style={{ marginTop: "9rem" }} src={sideHouse} alt="House" />
           </Link>
         </div>
         <div className="icon">
-          <Link>
+          <Link to={"/dashboard/pool"}>
             <img src={sidePool} alt="Pool" />
           </Link>
         </div>
         <div className="icon">
-          <Link>
+          <Link to={"/dashboard/payment"}>
             <img src={sideCard} alt="card" />
           </Link>
         </div>
         <div className="icon">
-          <Link>
+          <Link to={"/dashboard/calc"}>
             <img src={sideSheet} alt="Sheet of paper" />
           </Link>
         </div>

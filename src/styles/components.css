@@ -1,0 +1,338 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  margin-top: 80px;
+}
+.con-1 {
+  width: 555px;
+}
+.request-loan {
+  margin-left: 180px;
+  margin-right: 12px;
+  box-sizing: border-box;
+  max-width: 1220px;
+}
+
+.requestImage {
+  width: 555px;
+}
+
+.requestWords h1 {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 33px;
+  margin-top: 10px;
+  align-items: center;
+  color: #000000;
+}
+.requestWords .text {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 135.9%;
+  align-items: center;
+  letter-spacing: 0.02em;
+  color: #445266;
+}
+.create {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 175px;
+  height: 31px;
+  background: rgba(147, 187, 245, 0.22);
+  border-radius: 5px;
+  margin-top: 30px;
+
+  font-style: normal;
+  gap: 2px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  align-items: center;
+  text-align: center;
+  color: rgba(68, 82, 102, 0.25);
+}
+.empty {
+  width: 507px;
+  height: 171px;
+  background: rgba(147, 187, 245, 0.22);
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.con-2 {
+  background: #ffffff;
+  box-shadow: -2px 4px 7px 2px rgba(68, 82, 102, 0.15);
+  border-radius: 20px;
+  width: 430px;
+  height: 455px;
+}
+.inside-con {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 1rem 1rem 1rem;
+  height: 430px;
+}
+
+.con {
+  display: flex;
+}
+.money {
+  display: flex;
+  justify-content: space-between;
+  gap: 3px;
+  margin-bottom: 50px;
+}
+.money1 img {
+  width: 20px;
+}
+.money .money1 {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 33px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+  gap: 4px;
+}
+.money p {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 33px;
+  display: flex;
+  align-items: center;
+  color: #445266;
+}
+.reqBar {
+  background: rgba(208, 216, 227, 0.41);
+  border-radius: 20px;
+  margin-bottom: 50px;
+}
+.middle {
+  display: flex;
+  flex-direction: column;
+}
+
+.middle-1 {
+  display: flex;
+  gap: 60px;
+}
+.mid {
+  text-align: center;
+}
+.mid img {
+  margin: auto;
+}
+
+.middle-2 {
+  margin-top: 70px;
+}
+.middle-2 button {
+  color: #ffffff;
+  width: 220px;
+  height: 50px;
+  background: linear-gradient(257.79deg, #105dd2 41.88%, #2774e8 65.66%);
+  border-radius: 10px;
+}
+
+.report {
+  display: flex;
+  margin-top: 60px;
+}
+
+/* Dashboard  Calculator*/
+.calculator {
+  display: flex;
+}
+.dashcalc {
+  margin-left: 160px;
+  margin-right: 12px;
+  box-sizing: border-box;
+  max-width: 1220px;
+}
+
+.calchead {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 44px;
+  align-items: center;
+  text-align: center;
+  color: #24334a;
+}
+
+.calcWords {
+  max-width: 683px;
+  height: 130px;
+  width: 100%;
+  background: rgba(147, 187, 245, 0.22);
+  border-radius: 10px;
+}
+.calcText {
+  box-sizing: border-box;
+  display: flex;
+  padding: 40px;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 33px;
+  color: #24334a;
+}
+.calcInputs {
+  width: 683px;
+  background: rgba(147, 187, 245, 0.22);
+  border-radius: 10px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  padding: 60px;
+}
+.calcInputs div {
+  margin-bottom: 30px;
+}
+.calcInputs label {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 33px;
+  display: flex;
+  align-items: center;
+  color: #24334a;
+  margin-bottom: 10px;
+}
+
+.calcInputs Input {
+  width: 457px;
+  height: 86px;
+  background: rgba(221, 234, 255, 0.04);
+  border: 5px solid #dddddd;
+  border-radius: 15px;
+}
+.stepper {
+  position: absolute;
+}
+.repayment {
+  background: #ffffff;
+  box-shadow: -2px 4px 7px 2px rgba(68, 82, 102, 0.07);
+  border-radius: 20px;
+  height: 197px;
+  width: 700px;
+}
+.inside-repay {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  height: 197px;
+}
+.repayText {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 44px;
+  display: flex;
+  align-items: center;
+  color: #24334a;
+}
+
+.cash {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 49px;
+  display: flex;
+  align-items: center;
+  color: #1751f0;
+}
+
+.repayment p {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 33px;
+  display: flex;
+  align-items: center;
+  color: #707070;
+}
+
+.cal2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -160px;
+}
+
+.inside-total {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  top: 380px;
+  left: 975px;
+}
+.totalText {
+  font-family: "Times New Roman";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 37px;
+  align-items: center;
+  text-align: center;
+  color: #24334a;
+}
+.totalCash {
+  font-family: "Calibri";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 44px;
+  align-items: center;
+  color: #000000;
+}
+
+.points {
+  display: flex;
+  gap: 20px;
+}
+.inner-points {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 33px;
+  align-items: center;
+
+  color: #1b1d24;
+}
+
+/*Dashboard home*/
+
+.dashhome {
+  margin-left: 160px;
+  margin-right: 12px;
+  box-sizing: border-box;
+  max-width: 1220px;
+}
+
+/*Dashboard payments*/
+.dashpayment {
+  margin-left: 160px;
+  margin-right: 12px;
+  box-sizing: border-box;
+  max-width: 1220px;
+}

@@ -4,10 +4,15 @@ import { AiOutlineSearch } from "react-icons/ai";
 import "../../styles/dashboard.css";
 import { Input, InputGroup, InputLeftElement, Button } from "@chakra-ui/react";
 import Connect from "../Connect";
-import { pairHashpack } from "./../hashconnect/index";
+import { pairHashpack } from "../hashconnect/index";
 import peopleIcon from "../../assets/poolIcon.svg";
 import docs from "../../assets/docAccount.svg";
 import circle from "../../assets/Ellipse.svg";
+import Bell from "../../assets/Bell.svg";
+import Setting from "../../assets/setting.svg";
+import Profile from "../../assets/profile.svg";
+import CreatePool from "./CreatePool";
+import { Link } from "react-router-dom";
 
 const DashNav = () => {
   const [paringString, setParingString] = useState("");
@@ -25,9 +30,9 @@ const DashNav = () => {
     <>
       <header className="dash-nav">
         <div className="dashlogo">
-          <h1>
+          <Link to={"/"}>
             <img src={LoanLink} alt="LoanLink Logo" />
-          </h1>
+          </Link>
         </div>
         <div className="">
           <InputGroup>
@@ -49,29 +54,27 @@ const DashNav = () => {
         <div className="side ">
           {status ? (
             <>
-              <div>
-                <div className="poolBtn">
-                  <Button
-                    display={"flex"}
-                    justifyContent={"space-between"}
-                    background={"#2774e8"}
-                    width={"200px"}
-                    gap={15}
-                    color={"#fff"}
-                    _hover={{ bg: "#2774e8" }}
-                  >
-                    <div>Create Pool</div>
-                    <span></span>
-                    <div>
-                      <img src={peopleIcon} alt="people icons" />
-                    </div>
-                  </Button>
+              <div className="isConnected">
+                <div>
+                  <div className="poolBtn">
+                    <CreatePool />
+                  </div>
+                  <div className="accountDetails">
+                    <p id="accountId"></p>
+                    <img src={docs} alt="docs" />
+                    <p>connected</p>
+                    <img src={circle} alt="circle" />
+                  </div>
                 </div>
-                <div className="accountDetails">
-                  <p id="accountId"></p>
-                  <img src={docs} alt="docs" />
-                  <p>connected</p>
-                  <img src={circle} alt="circle" />
+
+                <div>
+                  <img src={Bell} alt="Bell" />
+                </div>
+                <div>
+                  <img src={Setting} alt="Setting" />
+                </div>
+                <div>
+                  <img src={Profile} alt="Profile" />
                 </div>
               </div>
             </>

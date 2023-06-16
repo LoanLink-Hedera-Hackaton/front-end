@@ -12,8 +12,11 @@
   border-radius: 20px 20px 0px 0px;
 }
 .accountDetails {
+  position: absolute;
   display: flex;
   justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 #accountId {
   font-family: "Nunito";
@@ -25,6 +28,37 @@
   align-items: center;
 
   color: #445266;
+}
+.isConnected {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+/*create pool popup*/
+
+.step {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 27px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 20px;
+  color: #707070;
+}
+.upload {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 27px;
+  align-items: center;
+  text-align: left;
+
+  color: #000000;
 }
 
 /*Dashboard sidebar*/
@@ -66,7 +100,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 48px;
+  margin-bottom: 66px;
 }
 .icon img {
   display: flex;
@@ -75,7 +109,13 @@
 }
 
 .first {
-  margin-bottom: 210px;
+  margin-bottom: 273px;
+  gap: 20px;
+}
+.second {
+  position: absolute;
+  bottom: -3%;
+  left: 10px;
 }
 
 /*Dashboard body - DashPool*/
@@ -107,7 +147,7 @@
 .poolGLC {
   position: absolute;
   top: 200px;
-  right: 10px;
+  right: 60px;
   margin-top: 10px;
   display: flex;
   gap: 20px;
@@ -116,7 +156,7 @@
 .tabs {
   background: rgba(208, 216, 227, 0.41);
   border-radius: 20px;
-  width: 600px;
+  width: 550px;
 }
 .tab {
   border-radius: 20px;
@@ -125,22 +165,40 @@
 }
 
 .panels {
-  /* margin-top: 50px; */
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  margin: 4rem 3rem 0 0;
+  margin: 7rem 3rem 0 0;
   padding: 16px 16px 60px 16px;
-  gap: 33px;
+  gap: 37px;
 }
 .card-flex {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-/* .calendarBtn {
+.calendarBtn {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.41);
+  box-shadow: -2px 2px 7px rgba(163, 171, 183, 0.47);
+  border-radius: 5px;
+  width: 135px;
   height: 31px;
-} */
+  padding: 8px;
+
+  font-style: normal;
+  font-weight: 800;
+  font-size: 12px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+
+  color: #24334a;
+}
 .calendarBtn,
 .GLbtn {
   background: rgba(255, 255, 255, 0.41);
@@ -211,7 +269,7 @@
 .inside-head {
   display: flex;
   justify-content: space-between;
-  padding: 2rem 2rem 2rem 2rem;
+  padding: 1rem 1rem 1rem 1rem;
 }
 .pool-card-head {
   display: flex;
@@ -250,6 +308,10 @@
 .pool-card-head button p {
   text-align: center;
 }
+.out-progress {
+  margin: 1rem 1rem 1rem 1rem;
+  box-sizing: border-box;
+}
 .progressBar {
   background: rgba(208, 216, 227, 0.41);
   border-radius: 20px;
@@ -257,7 +319,17 @@
   align-items: center;
   margin: auto;
 }
+.funders {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
 
+  color: #24334a;
+}
 .pool-card-footer {
   display: flex;
   justify-content: space-between;
@@ -265,8 +337,6 @@
   border-radius: 0px 0px 15px 15px;
   height: 57px;
   padding: 12px;
-  /* padding-bottom: 0; */
-  /* padding-top: 15px; */
 }
 .foot {
   display: flex;
@@ -303,20 +373,11 @@
 /*Dash footer component*/
 .dashfooter {
   position: absolute;
-  margin-left: 140px;
-  /* margin-right: 12px;
-  position: absolute;
-  max-width: 1220px;
-  width: 85%;
+  margin-left: 100px;
+  margin-top: 100px;
+  width: 87%;
+  bottom: -90px;
   height: 62px;
-  left: 146px;
-  bottom: -40px;
-  background: rgba(208, 216, 227, 0.41);
-  border-radius: 0px 0px 20px 0px; */
-  width: 85%;
-  height: 62px;
-  left: 22px;
-  bottom: -15%;
   background: rgba(208, 216, 227, 0.41);
   border-radius: 0px 0px 20px 0px;
 }
@@ -327,7 +388,21 @@
   justify-content: center;
   align-items: center;
   gap: 12px;
-  margin-top: 20px;
+  margin-top: 10px;
+}
+.footer-up {
+  position: absolute;
+  width: 43px;
+  height: 44px;
+  right: 3%;
+  top: 9px;
+  background: #2774e8;
+  border-radius: 5px;
+  display: flex;
+  margin: auto;
+  align-items: center;
+  color: #ffffff;
+  justify-content: center;
 }
 .copy {
   width: 40px;
