@@ -4,6 +4,7 @@ import LoanLink from "../assets/LoanLink.svg";
 import "../styles/utils.css";
 import { Link } from "react-router-dom";
 import { FaTimes, FaBars } from "react-icons/fa";
+import { BiSearch } from "react-icons/bi";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,7 +32,7 @@ const Navbar = () => {
     },
     {
       name: "How we work",
-      path: "/",
+      path: "/work",
     },
     {
       name: "FAQ",
@@ -70,6 +71,7 @@ const Navbar = () => {
         <nav className={`VStack ${isMenuOpen ? "open" : ""}`}>
           {renderLinks}
           <input placeholder="Search" />
+          <BiSearch className="searchIcon" />
         </nav>
       </header>
 

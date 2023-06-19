@@ -46,6 +46,7 @@ header {
 }
 
 .VStack {
+  position: relative;
   justify-content: center;
   display: flex;
   flex-direction: row;
@@ -62,6 +63,11 @@ header {
   height: 45px;
   border: none;
   outline: none;
+}
+.searchIcon {
+  position: absolute;
+  right: 190px;
+  color: rgba(68, 82, 102, 0.51);
 }
 .menu-close {
   position: fixed;
@@ -86,12 +92,8 @@ header {
   position: absolute;
   right: 220px;
   top: 22px;
-  /* bottom: 95.89%; */
   color: rgba(68, 82, 102, 0.51);
 }
-/* .open {
-  background-color: red;
-} */
 
 .home-part1 {
   margin: 0;
@@ -115,15 +117,11 @@ header {
 
 .home {
   display: flex;
-  /* flex-wrap: wrap; */
-  /* justify-content: space-between; */
-  /* padding-bottom: 60px; */
   padding: 0 16px 60px 16px;
 }
 
 .home-part1 {
   margin: auto;
-  /* max-width: 600px; */
   max-height: 300px;
   margin-left: 50px;
   margin-top: 50px;
@@ -134,10 +132,6 @@ header {
   font-family: "Nunito", sans-serif;
   font-weight: 900;
   font-size: 40px;
-  /* line-height: 55px; */
-  /* display: flex;
-  align-items: center; */
-
   color: #24334a;
 }
 .home-part1 p {
@@ -164,8 +158,6 @@ header {
   left: -36px;
   top: 45px;
   width: 95px;
-  /* height: 0px; */
-  /* bottom: 582px; */
   border: 3px solid #2774e8;
   transform: rotate(-90deg);
 }
@@ -185,14 +177,91 @@ header {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   width: 100%;
-  /* position: relative;
-  top: -10px;
-  right: 90px; */
 }
 .home-part2 img {
   width: 550px;
 }
 
+/*How we work*/
+.how-header {
+  margin: 3rem 2rem 2rem 3rem;
+}
+.how-header h1 {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 55px;
+  display: flex;
+  align-items: center;
+  color: #24334a;
+}
+.procedures {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  /* background-color: red; */
+  padding: 300px;
+  padding-top: 100px;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.step1 {
+  margin-top: -50px;
+  gap: 40px;
+}
+.step2 {
+  margin-bottom: -270px;
+}
+.step3 {
+  margin-top: -140px;
+}
+.step4 {
+  margin-bottom: -500px;
+}
+.step-text {
+  box-sizing: border-box;
+  width: 261px;
+  height: 118px;
+  background: #ffffff;
+  box-shadow: -4px 4px 11px 3px rgba(226, 227, 227, 0.61);
+  border-radius: 7px;
+
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: #000000;
+}
+
+.step-number {
+  width: 70px;
+  height: 70px;
+  border: 4px solid rgba(147, 187, 245, 0.22);
+  border-radius: 50%;
+
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 33px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #2774e8;
+}
+.step-number p {
+  width: 15px;
+  height: 33px;
+}
 /*Card Component*/
 
 .card {
@@ -201,15 +270,13 @@ header {
   border-radius: 20px;
   width: 100%;
   min-width: 261px;
-  height: 118px;
+  /* height: 118px; */
   padding: 14px;
 }
 
 .card-section {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  /* margin: 2rem 2rem; */
-  /* padding-bottom: 60px; */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   margin: 0 3rem 0 3rem;
   padding: 16px 16px 60px 16px;
   gap: 33px;
@@ -223,7 +290,7 @@ header {
 .cardTitle h3 {
   font-style: normal;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 33px;
   display: flex;
   align-items: center;
@@ -280,7 +347,7 @@ header {
 
 .sub1 p {
   font-style: normal;
-  font-weight: 800;
+  font-weight: 500;
   font-size: 12px;
   line-height: 16px;
   display: flex;
@@ -361,8 +428,6 @@ footer {
 
 .modal-text {
   text-align: center;
-  /* padding-top: 90px;
-  padding-bottom: 20px; */
   padding: 100px 20px 20px 20px;
   font-family: "Nunito";
   font-style: normal;

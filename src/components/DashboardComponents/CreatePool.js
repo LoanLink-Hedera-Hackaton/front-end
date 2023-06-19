@@ -8,15 +8,16 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
-  VStack,
   useDisclosure,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import peopleIcon from "../../assets/poolIcon.svg";
-import inputImg from "../../assets/inputImg.svg";
+import "../../styles/components.css";
+// import inputImg from "../../assets/inputImg.svg";
 const CreatePool = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [selectedImage, setSelectedImage] = useState(null);
+  console.log(selectedImage);
 
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
@@ -46,9 +47,9 @@ const CreatePool = () => {
         isCentered
         onClose={onClose}
         isOpen={isOpen}
-        // width={"36px"}
-        // motionPreset="slideInBottom"
-        size={"sm"}
+        width={"806px"}
+        motionPreset="slideInBottom"
+        size={"xl"}
       >
         <ModalOverlay />
         <ModalContent>

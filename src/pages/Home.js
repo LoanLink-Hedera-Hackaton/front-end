@@ -7,8 +7,6 @@ import moneyHand from "../assets/money-hand.svg";
 import DirectDeposit from "../assets/direct-deposit.svg";
 import PassiveIncome from "../assets/passive-income.svg";
 import Secure from "../assets/secured-shield.svg";
-import SubFooter from "../components/SubFooter";
-import Footer from "../components/Footer";
 import { Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
@@ -17,13 +15,8 @@ const Home = () => {
     <div>
       <section className="home">
         <div className="home-part1">
-          <h1>
-            Generate passive income <br /> with the power of web3
-          </h1>
-          <p>
-            Empowering GLobal Connections: Unleash the Power of Web3 <br />{" "}
-            Loans to Fuel Startup Success
-          </p>
+          <h1>Unlock Your Financial Potential with LoanLink.</h1>
+          <p>Seamless lending solutions for diverse collateral types</p>
           <div className="get-started">
             <Button
               borderRadius={"7px"}
@@ -33,7 +26,7 @@ const Home = () => {
                 bg: "#4278c9",
               }}
             >
-              <Link to={"/dashboard"}>Get Started</Link>
+              <Link to={"/dashboard/profile"}>Get Started</Link>
             </Button>
           </div>
           <div className="powered">
@@ -54,43 +47,37 @@ const Home = () => {
       </section>
       <section className="card-section">
         <Cards
-          cardTitle={"516k"}
-          cardSubTitle={"pools"}
+          cardTitle={"Pool of Funds"}
+          // cardSubTitle={"pools"}
           cardImg={moneyHand}
           cardText={
-            "New pools being constanting been created and funded means there’s a plan for everyone"
+            "Contribute to our community fund and empower others. Create a pool of funds where users can contribute and borrow from to meet their financial needs."
           }
         />
         <Cards
-          cardTitle={"Direct"}
-          cardSubTitle={"deposit"}
+          cardTitle={"Transparent Valuation"}
+          // cardSubTitle={"deposit"}
           cardImg={DirectDeposit}
           cardText={
-            "Receive your loans directly into your USD bank account with the power of our partner APIs"
+            "Trustworthy valuation methods ensure accurate assessment of your collateral's worth. Our integration with oracles and third-party services ensures transparency and accuracy."
           }
         />
         <Cards
-          cardTitle={"Passive"}
-          cardSubTitle={"income"}
+          cardTitle={"Secure Collateral Locking"}
+          // cardSubTitle={"income"}
           cardImg={PassiveIncome}
           cardText={
-            "Interest on the loan you provide to each / any pool is been paid into your wallet transparently."
+            "Rest easy knowing your collateral is locked in a smart contract, providing assurance to lenders and ensuring the safety of your assets."
           }
         />
         <Cards
-          cardTitle={"Secure"}
-          cardSubTitle={"investments"}
+          cardTitle={"Safe Loan-to-Value Ratios"}
+          // cardSubTitle={"investments"}
           cardImg={Secure}
           cardText={
-            "Proper KYC, KYT and heavily processed colaterization means we have you covered"
+            "Our responsible lending approach sets maximum loan amounts based on the valuation of your collateral, ensuring a safe borrowing experience."
           }
         />
-      </section>
-      <section className="subFooter-section">
-        <SubFooter />
-      </section>
-      <section className="footer-section">
-        <Footer />
       </section>
     </div>
   );

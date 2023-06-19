@@ -12,7 +12,7 @@ const Footer = () => {
     },
     {
       name: "How we work",
-      path: "/",
+      path: "/work",
     },
     {
       name: "FAQ",

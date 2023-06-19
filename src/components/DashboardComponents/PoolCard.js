@@ -40,11 +40,11 @@ const PoolCard = ({
                 {/*2 */}
               </div>
               <div>
-                <button>
-                  <p>
-                    <Link to={"/dashboard/pool/req"}>Request Loan</Link>
-                  </p>
-                </button>
+                <Link to={"/dashboard/pool/request"}>
+                  <button>
+                    <p>Request Loan</p>
+                  </button>
+                </Link>
               </div>
             </div>
             <div className="out-progress">

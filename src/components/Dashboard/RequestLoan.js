@@ -2,14 +2,38 @@ import React from "react";
 import "../../styles/components.css";
 import reqpoolImg from "../../assets/reqPoolImg.png";
 import Cent from "../../assets/LoanAmount.svg";
-import { Button, Progress } from "@chakra-ui/react";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  Button,
+  Progress,
+} from "@chakra-ui/react";
 import members from "../../assets/members.svg";
 import time from "../../assets/reqTime.svg";
+import dropCoins from "../../assets/dropCoins.svg";
 import flag from "../../assets/reportFlag.svg";
+import { Link } from "react-router-dom";
+// import { useNavigate, useParams } from "react-router-dom";
 
 const RequestLoan = () => {
   return (
     <section className="request-loan">
+      <div className="loan-details">
+        <h1>Loan Details</h1>
+        <p>
+          <Breadcrumb>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/dashboard/pool">Pools</BreadcrumbLink>
+            </BreadcrumbItem>
+
+            <BreadcrumbItem isCurrentPage>
+              <BreadcrumbLink href="#">loan details</BreadcrumbLink>
+            </BreadcrumbItem>
+          </Breadcrumb>
+          /
+        </p>
+      </div>
       <div className="container">
         <div className="con-1">
           <div className="requestImage">
@@ -45,45 +69,39 @@ const RequestLoan = () => {
         <div className="con-2">
           <div className="inside-con">
             <div className="money">
-              <div className="money1">
-                <img src={Cent} alt="cent" />
-                <h3>50,000</h3>
-              </div>
-              <p>of $20,000,00 loan pool</p>
+              <img src={Cent} alt="cent" />
+              <h3>50,000</h3> <span>loan pool</span>
             </div>
-            <Progress
-              className="reqBar"
-              value={40}
-              size="xs"
-              height="4px"
-              colorScheme="blue"
-              borderRadius={"20px"}
-              width={"280px"}
-            />
+            <div>
+              <Progress
+                className="reqBar"
+                value={80}
+                size="xs"
+                height="4px"
+                colorScheme="blue"
+                borderRadius={"20px"}
+                width={"280px"}
+              />
+            </div>
             {/**3 */}
             <div className="middle">
               <div className="middle-1">
-                <div className="mid">
-                  <img src={members} alt="members" />
-                  <p>50 members</p>
-                  {/**4 */}
-                </div>
-
-                <div className="mid">
-                  <img src={time} alt="members" />
-                  <p>5 months</p>
-                  {/**5 */}
-                </div>
+                <img src={members} alt="members" />
+                <p>50 members own this pool</p>
+              </div>
+              <div className="middle-1">
+                <img src={time} alt="Time in months" />
+                <p>You are required to repay in 3 months</p>
+              </div>
+              <div className="middle-1">
+                <img src={dropCoins} alt="interest rate" />
+                <p>20% interest rate</p>
               </div>
             </div>
             <div className="middle-2">
-              <Button
-                _hover={{
-                  bg: "linear-gradient(221.79deg, #105dd2 50.88%, #2774e8 30.66%)",
-                }}
-              >
-                Fund pool
-              </Button>
+              <Link to={"/dashboard/pool/collateral"}>
+                <Button>Request loan</Button>
+              </Link>
             </div>
             <div className="report">
               <img src={flag} alt="flag" />

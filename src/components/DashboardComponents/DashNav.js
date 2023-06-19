@@ -2,17 +2,18 @@ import React, { useState } from "react";
 import LoanLink from "../../assets/LoanLink.svg";
 import { AiOutlineSearch } from "react-icons/ai";
 import "../../styles/dashboard.css";
-import { Input, InputGroup, InputLeftElement, Button } from "@chakra-ui/react";
+import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
 import Connect from "../Connect";
 import { pairHashpack } from "../hashconnect/index";
-import peopleIcon from "../../assets/poolIcon.svg";
+// import peopleIcon from "../../assets/poolIcon.svg";
 import docs from "../../assets/docAccount.svg";
 import circle from "../../assets/Ellipse.svg";
 import Bell from "../../assets/Bell.svg";
 import Setting from "../../assets/setting.svg";
 import Profile from "../../assets/profile.svg";
-import CreatePool from "./CreatePool";
+// import CreatePool from "./CreatePool";
 import { Link } from "react-router-dom";
+import CreatePoolModal from "./CreatePoolModal";
 
 const DashNav = () => {
   const [paringString, setParingString] = useState("");
@@ -37,7 +38,16 @@ const DashNav = () => {
         <div className="">
           <InputGroup>
             <InputLeftElement pointerEvents="none" padding={"15px"}>
-              <AiOutlineSearch color="gray.300" />
+              <AiOutlineSearch
+                color="gray.300"
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  marginTop: "7px",
+                  color: "rgba(68, 82, 102, 0.51)",
+                }}
+              />
             </InputLeftElement>
             <Input
               width="345px"
@@ -55,14 +65,14 @@ const DashNav = () => {
           {status ? (
             <>
               <div className="isConnected">
-                <div>
-                  <div className="poolBtn">
-                    <CreatePool />
+                <div className="poolBtn">
+                  <div>
+                    <CreatePoolModal />
                   </div>
                   <div className="accountDetails">
                     <p id="accountId"></p>
                     <img src={docs} alt="docs" />
-                    <p>connected</p>
+                    <p className="connected">connected</p>
                     <img src={circle} alt="circle" />
                   </div>
                 </div>

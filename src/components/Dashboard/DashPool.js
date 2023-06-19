@@ -21,7 +21,6 @@ import Solar from "../../assets/solar.svg";
 import Sundry from "../../assets/Sundry.svg";
 import realEstate from "../../assets/realEstate.svg";
 import { BiListUl } from "react-icons/bi";
-// import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 
 const DashPool = () => {
@@ -43,17 +42,20 @@ const DashPool = () => {
                 <TabList className="tabs">
                   <Tab className="tab">All Projects</Tab>
                   <Tab className="tab">Green Energy Projects</Tab>
-                  <Tab className="tab">SDG Projects</Tab>
+                  <Tab className="tab" isDisabled>
+                    SDG Projects
+                  </Tab>
                   <Tab className="tab" isDisabled>
                     All Tabs
                   </Tab>
                 </TabList>
 
-                <TabPanels width={"1220px"}>
+                <TabPanels width={"1220px"} height={"100vh"}>
                   <TabPanel className="panels card-flex">
                     {" "}
                     {/**panels */}
                     <PoolCard
+                      cardId={1}
                       poolImg={FarmTech}
                       companyName={"Farming Tech"}
                       progress={22}
@@ -64,6 +66,7 @@ const DashPool = () => {
                       funders={5}
                     />
                     <PoolCard
+                      cardId={2}
                       poolImg={AI}
                       companyName={"AI powered Fashion selector"}
                       progress={50}
@@ -74,6 +77,7 @@ const DashPool = () => {
                       funders={70}
                     />
                     <PoolCard
+                      cardId={3}
                       poolImg={Renewable}
                       companyName={"Renewable Energy projects for Households "}
                       progress={100}
@@ -84,6 +88,7 @@ const DashPool = () => {
                       funders={400}
                     />
                     <PoolCard
+                      cardId={4}
                       poolImg={Solar}
                       companyName={"Solar Energy Projects"}
                       progress={100}
@@ -94,6 +99,7 @@ const DashPool = () => {
                       funders={300}
                     />
                     <PoolCard
+                      cardId={5}
                       poolImg={Sundry}
                       companyName={"Sundry Foods Limited Series"}
                       progress={100}
@@ -104,6 +110,40 @@ const DashPool = () => {
                       funders={366}
                     />
                     <PoolCard
+                      cardId={6}
+                      poolImg={realEstate}
+                      companyName={"Verified real Estate"}
+                      progress={100}
+                      loan={"50,000"}
+                      time={12}
+                      Interest={50}
+                      status={"funding Completed"}
+                      funders={201}
+                    />
+                    <PoolCard
+                      cardId={6}
+                      poolImg={realEstate}
+                      companyName={"Verified real Estate"}
+                      progress={100}
+                      loan={"50,000"}
+                      time={12}
+                      Interest={50}
+                      status={"funding Completed"}
+                      funders={201}
+                    />
+                    <PoolCard
+                      cardId={6}
+                      poolImg={realEstate}
+                      companyName={"Verified real Estate"}
+                      progress={100}
+                      loan={"50,000"}
+                      time={12}
+                      Interest={50}
+                      status={"funding Completed"}
+                      funders={201}
+                    />
+                    <PoolCard
+                      cardId={6}
                       poolImg={realEstate}
                       companyName={"Verified real Estate"}
                       progress={100}
