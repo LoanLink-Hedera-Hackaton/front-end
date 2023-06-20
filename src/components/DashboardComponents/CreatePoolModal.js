@@ -3,15 +3,12 @@ import {
   Button,
   Modal,
   ModalContent,
-  ModalFooter,
-  ModalHeader,
   ModalOverlay,
   useDisclosure,
 } from "@chakra-ui/react";
 import "../../styles/components.css";
 import peopleIcon from "../../assets/poolIcon.svg";
 import createhand from "../../assets/create-hand-coin.svg";
-// import cloudUpload from "../../assets/cloudUpload.svg";
 import { BiCloudUpload } from "react-icons/bi";
 
 const CreatePoolModal = () => {
