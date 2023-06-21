@@ -1,6 +1,15 @@
 import { HashConnect } from "hashconnect";
 
 let hashconnect = new HashConnect();
+//
+// const keepData = {
+//   topic: "",
+//   pairingString: "",
+//   privateKey: "",
+//   pairedWalletData: "",
+//   pairedAccount: [],
+// };
+//
 
 let appMetadata = {
   name: "LoanLink",
@@ -8,8 +17,20 @@ let appMetadata = {
   icon: "https://absolute.url/to/icon.png",
 };
 
+let initData;
+// const initHashpack = async () => {
+//   // hashconnect = new HashConnect();
+//   initData = await hashconnect.init(appMetadata, "testnet", false);
+
+//   return initData;
+// };
+
 export const pairHashpack = async () => {
-  let initData = await hashconnect.init(appMetadata, "testnet", false);
+  initData = await hashconnect.init(appMetadata, "testnet", false);
+  //
+  // let accountData = await hashconnect.init(appMetadata);
+  // keepData.privateKey = accountData.privKey;
+  //
 
   hashconnect.foundExtensionEvent.once((walletMetadata) => {
     console.log(walletMetadata);

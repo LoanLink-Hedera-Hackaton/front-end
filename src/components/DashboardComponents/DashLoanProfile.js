@@ -6,9 +6,6 @@ import PaymentOptionsModal from "./PaymentOptionsModal";
 const DashLoanProfile = () => {
   return (
     <div className="loan-profile">
-      <div className="loan-header">
-        <h2>Loans</h2>
-      </div>
       <div className="loan-body">
         <div className="loan-card">
           <LoanCard />

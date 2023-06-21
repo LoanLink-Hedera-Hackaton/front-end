@@ -7,7 +7,7 @@ import {
   TabPanels,
   Tabs,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PoolCard from "../DashboardComponents/PoolCard";
 import {
   BsFillGridFill,
@@ -29,11 +29,27 @@ const DashPool = () => {
   const toggleCalendar = () => {
     setIsOpen(!isOpen);
   };
+
+  const [isHidden, setIsHidden] = useState(false);
+  const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY;
+      setIsHidden(prevScrollPos > currentScrollPos);
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [prevScrollPos]);
   return (
     <>
-      <section>
+      <section className="dashpool-section">
         <div className="dashpool">
-          <div className="poolTitle">
+          <div className={`${isHidden ? "hide" : ""} poolTitle`}>
             <h1>Pools</h1>
           </div>
           <div className="pools">

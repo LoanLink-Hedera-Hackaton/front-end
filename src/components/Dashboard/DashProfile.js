@@ -119,10 +119,18 @@ const DashProfile = () => {
         )}
       </div>
       <span className="divider"></span>
-      <div>
+      <div className="all-loans">
         {isLoan ? (
-          <div>
-            <DashLoanProfile />
+          <div className="your-loans">
+            <div className="loan-header">
+              <h2>Loans</h2>
+            </div>
+            <div>
+              <DashLoanProfile />
+            </div>
+            <div>
+              <DashLoanProfile />
+            </div>
           </div>
         ) : (
           <div className="loanBox">

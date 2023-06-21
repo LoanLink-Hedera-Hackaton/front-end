@@ -1,4 +1,5 @@
 import {
+  Button,
   Modal,
   ModalBody,
   ModalContent,
@@ -21,17 +22,22 @@ const SuccessPaymentModal = () => {
           blockScrollOnMount={false}
           isOpen={isOpen}
           onClose={onClose}
-          size="xl"
+          size="full"
         >
           <ModalOverlay />
           <ModalContent>
             <ModalBody>
               <div>
-                <img src={successHands} alt="validating loan" />
+                <img
+                  src={successHands}
+                  alt="validating loan"
+                  className="success-img"
+                />
               </div>
               <div className="success">
                 <p className="large-text">Success</p>
                 <p className="small-text">Repayment successful </p>
+                <Button onClick={onClose}>Done</Button>
               </div>
             </ModalBody>
           </ModalContent>
