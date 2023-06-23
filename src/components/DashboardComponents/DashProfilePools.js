@@ -7,6 +7,7 @@ import poolCylinder from "../../assets/poolCylinder.svg";
 
 const DashProfilePools = () => {
   const [isActiveTag, setIsActiveTag] = useState(true);
+  console.log(setIsActiveTag);
   return (
     <div className="profile-pool">
       <div className="pool-header">

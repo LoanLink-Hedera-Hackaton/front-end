@@ -25,23 +25,21 @@ const DashFooter = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
   return (
-    <footer>
-      <div className="dashfooter">
-        <div className="inner">
-          <img className="copy" src={copyright} alt="Copyright" />
-          <p>CopyRight</p>
-          <img src={footerLogo} alt="logo" />
-        </div>
-        <div>
-          <button
-            className={`footer-up ${isVisible ? "visible" : ""}`}
-            onClick={scrollToTop}
-          >
-            <BsArrowUp />
-          </button>
-        </div>
+    <div className="dashfooter">
+      <div className="inner">
+        <img className="copy" src={copyright} alt="Copyright" />
+        <p>CopyRight</p>
+        <img src={footerLogo} alt="logo" />
       </div>
-    </footer>
+      <div>
+        <button
+          className={`footer-up ${isVisible ? "visible" : ""}`}
+          onClick={scrollToTop}
+        >
+          <BsArrowUp />
+        </button>
+      </div>
+    </div>
   );
 };
 

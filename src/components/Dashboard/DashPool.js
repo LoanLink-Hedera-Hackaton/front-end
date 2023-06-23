@@ -22,6 +22,7 @@ import Sundry from "../../assets/Sundry.svg";
 import realEstate from "../../assets/realEstate.svg";
 import { BiListUl } from "react-icons/bi";
 import "react-calendar/dist/Calendar.css";
+import DashFooter from "../DashboardComponents/DashFooter";
 
 const DashPool = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -204,6 +205,7 @@ const DashPool = () => {
           </div>
         </div>
       </section>
+      <DashFooter />
     </>
   );
 };

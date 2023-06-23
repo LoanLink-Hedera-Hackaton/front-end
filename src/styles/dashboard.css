@@ -70,8 +70,8 @@
   box-sizing: border-box;
   /* display: flex;
   flex-direction: column; */
-  width: 114px;
-  height: 85%;
+  width: 95px;
+  height: 84%;
   left: 23px;
   top: 100px;
   background: rgba(52, 76, 112, 0.1);
@@ -159,10 +159,11 @@
   /* justify-content: space-between;
   align-items: center; */
   margin-top: 20px;
+  position: relative;
 }
 .poolGLC {
   position: absolute;
-  top: 200px;
+  top: 0;
   right: 60px;
   margin-top: 10px;
   display: flex;
@@ -391,26 +392,42 @@
 }
 
 /*Dash footer component*/
-.dashfooter {
-  position: sticky;
-  margin-left: 100px;
-  /* margin-top: 100px; */
-  /* width: 95%;
-  bottom: -90px; */
-  height: 62px;
+/* .dashfooter {
+  position: fixed;
+  width: 87%;
+  bottom: 15px;
+  margin-left: 140px;
+  height: 50px;
   background: rgba(208, 216, 227, 0.41);
   border-radius: 0px 0px 20px 0px;
+} */
+.dashfooter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 81%;
+  height: 62px;
+  margin-left: 180px;
+  margin-top: 20px;
+  flex-shrink: 0;
+  border-radius: 0px 0px 20px 0px;
+  background: rgba(208, 216, 227, 0.41);
 }
 
-.inner {
+/* .inner {
   display: flex;
-  /* margin: auto; */
   justify-content: center;
   align-items: center;
   gap: 8px;
-  /* margin-top: 10px; */
+  margin-top: 4px;
+} */
+.inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
 }
-.footer-up {
+/* .footer-up {
   position: fixed;
   width: 43px;
   height: 44px;
@@ -425,9 +442,9 @@
   justify-content: center;
   opacity: 1;
   transition: opacity 0.3s ease;
-}
+} */
 
-.footer-up .visible {
+/* .footer-up .visible {
   opacity: 0;
 }
 .copy {
@@ -443,7 +460,7 @@
   align-items: center;
 
   color: #000000;
-}
+} */
 @media (max-width: 1100px) {
   .poolGLC {
     display: none;
@@ -451,17 +468,17 @@
   .first {
     margin-bottom: 100%;
   }
-  .dashfooter {
+  /* .dashfooter {
     bottom: -100px;
-  }
+  } */
 }
 @media (max-width: 900px) {
-  .dashfooter {
+  /* .dashfooter {
     bottom: -100px;
-  }
+  } */
   .repNav {
     position: fixed;
-    background-color: red;
+    /* background-color: red; */
     top: 0;
     right: 40px;
     display: flex;

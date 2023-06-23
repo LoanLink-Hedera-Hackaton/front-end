@@ -178,6 +178,9 @@
   margin-right: 12px;
   box-sizing: border-box;
   max-width: 1220px;
+  /* overflow: hidden; */
+  /* background-color: red; */
+  height: 100vh;
 }
 .your-pools-txt {
   font-style: normal;
@@ -197,11 +200,14 @@
 }
 .divider {
   content: "";
-  position: absolute;
+  /* position: absolute;
   width: 80%;
   height: 0px;
   left: 203px;
-  top: 780px;
+  top: 780px; */
+  position: sticky;
+  width: 80%;
+  height: 5px;
   border: 3px solid rgba(221, 188, 17, 0.47);
   transform: rotate(0.19deg);
 }
@@ -222,10 +228,12 @@
 }
 .allYourPools {
   height: 600px;
+  /* background-color: red; */
 }
 .yourPools {
   overflow-y: scroll;
   height: 80%;
+  /* background-color: red; */
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -238,6 +246,7 @@
   background: #ffffff;
   box-shadow: 0px 0px 11px 7px rgba(36, 51, 74, 0.05);
   border-radius: 20px;
+  /* background-color: red; */
 }
 .pool-header {
   display: flex;
@@ -348,8 +357,8 @@
   height: 290px;
 }
 .your-loans {
-  overflow-y: scroll;
-  height: 80%;
+  /* overflow-y: scroll;
+  height: 80%; */
   display: flex;
   flex-direction: column;
   gap: 30px;
