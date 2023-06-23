@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../styles/components.css";
 import reqpoolImg from "../../assets/reqPoolImg.png";
 import Cent from "../../assets/LoanAmount.svg";
@@ -14,9 +14,11 @@ import time from "../../assets/reqTime.svg";
 import dropCoins from "../../assets/dropCoins.svg";
 import flag from "../../assets/reportFlag.svg";
 import { Link } from "react-router-dom";
+import AddFunds from "../DashboardComponents/AddFunds";
 // import { useNavigate, useParams } from "react-router-dom";
 
 const RequestLoan = () => {
+  const [isPoolDone, setIsPoolDone] = useState(false);
   return (
     <section className="request-loan">
       <div className="loan-details">
@@ -99,9 +101,13 @@ const RequestLoan = () => {
               </div>
             </div>
             <div className="middle-2">
-              <Link to={"/dashboard/pool/collateral"}>
-                <Button>Request loan</Button>
-              </Link>
+              {isPoolDone ? (
+                <Link to={"/dashboard/pool/collateral"}>
+                  <Button>Request loan</Button>
+                </Link>
+              ) : (
+                <AddFunds />
+              )}
             </div>
             <div className="report">
               <img src={flag} alt="flag" />

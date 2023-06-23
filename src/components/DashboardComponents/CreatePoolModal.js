@@ -38,7 +38,7 @@ const CreatePoolModal = () => {
         isOpen={isOpen}
         // width={"8006px"}
         motionPreset="slideInBottom"
-        size={"xl"}
+        size={"3xl"}
       >
         <ModalOverlay />
         <ModalContent>
@@ -89,12 +89,18 @@ const CreatePoolModal = () => {
               </div>
             </div>
             <div className="hand-coin">
-              <img src={createhand} alt="hand with coins" />
+              <img
+                src={createhand}
+                alt="hand with coins"
+                className="hand-coin-img"
+              />
             </div>
           </div>
           {/* </ModalBody> */}
           <div className="modal-btns">
-            <button className="modal-cancel">Cancel</button>
+            <button className="modal-cancel" onClick={onClose}>
+              Cancel
+            </button>
             <button className="modal-create">Create</button>
           </div>
 

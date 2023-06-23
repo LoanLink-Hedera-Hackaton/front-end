@@ -22,7 +22,7 @@ const SuccessPaymentModal = () => {
           blockScrollOnMount={false}
           isOpen={isOpen}
           onClose={onClose}
-          size="full"
+          size="6xl"
         >
           <ModalOverlay />
           <ModalContent>

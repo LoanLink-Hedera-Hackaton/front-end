@@ -154,7 +154,7 @@
   margin-top: 10px;
 }
 .middle-2 Button {
-  background: linear-gradient(257.79deg, #105dd2 41.88%, #2774e8 65.66%);
+  background-color: #2774e8;
   border-radius: 10px;
   width: 220px;
   color: #ffffff;
@@ -753,6 +753,7 @@
 .hand-coin img {
   /* background-color: red; */
   height: 100%;
+  width: 900px;
 }
 
 .modal-inputs {
@@ -1062,7 +1063,7 @@
   margin: 30px;
 }
 .success-img {
-  width: 700px;
+  width: 400px;
   margin: auto;
 }
 
@@ -1083,4 +1084,139 @@
   display: flex;
   align-items: center;
   color: #24334a;
+}
+
+/*Add funds modal*/
+.addfunds-header {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  gap: 4px;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+.add-header {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: #24334a;
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.add-header-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #445266;
+  font-size: 12px;
+  font-weight: 300;
+  margin: auto;
+}
+
+.addfunds-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 30px;
+}
+.add-inside1 {
+  display: flex;
+  gap: 20px;
+}
+.add-inside1 p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  margin: auto;
+}
+.add-inside1 input {
+  width: 150px;
+  height: 26px;
+  font-size: 12px;
+  flex-shrink: 0;
+  outline: none;
+  padding-left: 20px;
+  border: 0.5px solid rgba(68, 82, 102, 0.51);
+  background: rgba(217, 217, 217, 0);
+}
+.add-inside1 input::placeholder {
+  color: rgba(68, 82, 102, 0.51);
+  font-size: 12px;
+  font-weight: 600;
+}
+.input1 {
+  border-radius: 5px 0 0 5px;
+}
+
+.input2 {
+  border-radius: 0 5px 5px 0;
+}
+
+.add-inside2 {
+  display: flex;
+  gap: 20px;
+}
+.add-inside2 p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  margin: auto;
+}
+.add-inside2 input {
+  width: 120px;
+  height: 26px;
+  flex-shrink: 0;
+  outline: none;
+  font-size: 12px;
+  padding-left: 20px;
+  border-radius: 5px;
+  border: 0.5px solid rgba(68, 82, 102, 0.51);
+  background: rgba(217, 217, 217, 0);
+}
+.add-inside2 input::placeholder {
+  color: rgba(68, 82, 102, 0.51);
+  font-size: 12px;
+  font-weight: 600;
+}
+.loansize {
+  position: absolute;
+  left: 102px;
+  top: 7px;
+}
+.stand {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 296px;
+  height: 111px;
+  border-radius: 10px;
+  background: rgba(147, 187, 245, 0.22);
+}
+
+.stand-text1 {
+  color: #445266;
+  font-size: 12px;
+  font-weight: 500;
+}
+.stand-text2 {
+  color: #445266;
+  font-size: 12px;
+  font-weight: 700;
 }
