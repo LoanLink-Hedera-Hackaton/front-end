@@ -10,6 +10,7 @@ import "../../styles/components.css";
 import peopleIcon from "../../assets/poolIcon.svg";
 import createhand from "../../assets/create-hand-coin.svg";
 import { BiCloudUpload } from "react-icons/bi";
+import { contractSigning } from "../hashconnect";
 
 const CreatePoolModal = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -101,7 +102,9 @@ const CreatePoolModal = () => {
             <button className="modal-cancel" onClick={onClose}>
               Cancel
             </button>
-            <button className="modal-create">Create</button>
+            <button className="modal-create" onClick={contractSigning}>
+              Create
+            </button>
           </div>
 
           <div className="modal-footer"></div>
