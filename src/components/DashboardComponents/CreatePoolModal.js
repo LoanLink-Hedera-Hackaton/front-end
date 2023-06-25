@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Button,
   Modal,
@@ -10,10 +10,36 @@ import "../../styles/components.css";
 import peopleIcon from "../../assets/poolIcon.svg";
 import createhand from "../../assets/create-hand-coin.svg";
 import { BiCloudUpload } from "react-icons/bi";
-import { contractSigning } from "../hashconnect";
+import {
+  // checkContractBalance,
+  // contractSigning,
+  createPool,
+} from "../hashconnect";
 
+export let createGoalAmount;
+export let createInterestRate;
 const CreatePoolModal = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const [goalAmount, setGoalAmount] = useState("");
+  const [interestRate, setInterestRate] = useState("");
+
+  const handleGoal = (event) => {
+    setGoalAmount(event.target.value);
+  };
+  const handleInterest = (event) => {
+    setInterestRate(event.target.value);
+  };
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    // Do something with the input value
+    console.log("Goal Amount:", goalAmount);
+    createGoalAmount = goalAmount;
+    console.log("Interest Rate:", interestRate);
+    createInterestRate = interestRate;
+
+    await createPool(createGoalAmount, createInterestRate);
+  };
   return (
     <>
       <Button
@@ -50,62 +76,75 @@ const CreatePoolModal = () => {
             </p>
           </div>
           {/* <ModalBody> */}
-          <div className="modal-body">
-            <div className="modal-inputs">
-              <div className="input-details">
-                <label>Name of pool</label>
-                <input placeholder="$" />
-              </div>
-
-              <div className="input-details">
-                <label>Interest</label>
-                <input placeholder="$" />
-              </div>
-
-              <div className="input-details">
-                <label>Loan Period</label>
-                <input />
-              </div>
-
-              <div className="input-details">
-                <BiCloudUpload className="cloud" />
-                <label>Add Image</label>
-                <input />
-              </div>
-
-              <div className="input-details">
-                <label>Commitment</label>
-                <input placeholder="$" />
-              </div>
-
-              <div className="radio-details">
-                <div>
-                  <input type="radio" />
-                  <label>Colletaral</label>
+          <form onSubmit={handleSubmit}>
+            <div className="modal-body">
+              <div className="modal-inputs">
+                <div className="input-details">
+                  <label>Name of pool</label>
+                  <input placeholder="$" required />
                 </div>
-                <div>
-                  <input type="radio" />
-                  <label>No Colletaral</label>
+
+                <div className="input-details">
+                  <label>Interest</label>
+                  <input
+                    placeholder="$"
+                    type="number"
+                    value={interestRate}
+                    onChange={handleInterest}
+                    required
+                  />
                 </div>
+
+                <div className="input-details">
+                  <label>Loan Period</label>
+                  <input
+                    type="number"
+                    value={goalAmount}
+                    onChange={handleGoal}
+                    required
+                  />
+                </div>
+
+                <div className="input-details">
+                  <BiCloudUpload className="cloud" />
+                  <label>Add Image</label>
+                  <input />
+                </div>
+
+                <div className="input-details">
+                  <label>Commitment</label>
+                  <input placeholder="$" />
+                </div>
+
+                <div className="radio-details">
+                  <div>
+                    <input type="radio" />
+                    <label>Colletaral</label>
+                  </div>
+                  <div>
+                    <input type="radio" />
+                    <label>No Colletaral</label>
+                  </div>
+                </div>
+              </div>
+              <div className="hand-coin">
+                <img
+                  src={createhand}
+                  alt="hand with coins"
+                  className="hand-coin-img"
+                />
               </div>
             </div>
-            <div className="hand-coin">
-              <img
-                src={createhand}
-                alt="hand with coins"
-                className="hand-coin-img"
-              />
+            {/* </ModalBody> */}
+            <div className="modal-btns">
+              <button className="modal-cancel" onClick={onClose}>
+                Cancel
+              </button>
+              <button className="modal-create" type="submit">
+                Create
+              </button>
             </div>
-          </div>
-          {/* </ModalBody> */}
-          <div className="modal-btns">
-            <button className="modal-cancel" onClick={onClose}>
-              Cancel
-            </button>
-            <button className="modal-create" onClick={contractSigning}>
-              Create
-            </button>
-          </div>
+          </form>
 
           <div className="modal-footer"></div>
         </ModalContent>

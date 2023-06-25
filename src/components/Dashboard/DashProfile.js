@@ -4,6 +4,7 @@ import loanBox from "../../assets/loanBox.svg";
 import DashProfilePools from "../DashboardComponents/DashProfilePools";
 import DashLoanProfile from "../DashboardComponents/DashLoanProfile";
 import { Divider } from "@chakra-ui/react";
+import DashSide from "../DashboardComponents/DashSide";
 // import DashFooter from "../DashboardComponents/DashFooter";
 
 const DashProfile = () => {
@@ -12,6 +13,7 @@ const DashProfile = () => {
   console.log(setIsPool, setIsLoan);
   return (
     <>
+      <DashSide />
       <section className="dashprofile">
         <div className="your-pools-txt">
           <h1>Your Pools</h1>

@@ -51,7 +51,6 @@ const DashSide = () => {
           </div>
           <div className="icon">
             <Link
-              to={"/dashboard/payment"}
               className={`link ${
                 activePage === "payment" ? "active-text" : ""
               }`}

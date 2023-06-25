@@ -1,47 +1,28 @@
-// import { HashConnect } from "hashconnect";
-
-// let hashconnect = new HashConnect();
-
-// let appMetadata = {
-//   name: "LoanLink",
-//   description: "Decentralized Loan application",
-//   icon: "https://absolute.url/to/icon.png",
-// };
-
-// let initData;
-
-// export const pairHashpack = async () => {
-//   initData = await hashconnect.init(appMetadata, "testnet", false);
-
-//   hashconnect.foundExtensionEvent.once((walletMetadata) => {
-//     console.log(walletMetadata);
-//     hashconnect.connectToLocalWallet(initData.pairingString, walletMetadata);
-//   });
-
-//   hashconnect.pairingEvent.once((pairingData) => {
-//     console.log("wallet paired");
-//     console.log(pairingData);
-//     console.log("___________________");
-
-//     const accountId = document.getElementById("accountId");
-//     accountId.innerHTML = pairingData.accountIds[0];
-//     console.log(pairingData.accountIds[0]);
-//   });
-
-//   return initData;
-// };
-
 import { HashConnect } from "hashconnect";
+import {
+  createGoalAmount,
+  createInterestRate,
+} from "./../DashboardComponents/CreatePoolModal";
 import {
   ContractId,
   ContractExecuteTransaction,
   AccountId,
-  TransferTransaction,
+  ContractCallQuery,
+  PrivateKey,
+  Client,
+  ContractFunctionParameters,
 } from "@hashgraph/sdk";
-
 let hashconnect = new HashConnect();
 
-const contractId = ContractId.fromString("0.0.14959765");
+const contractId = ContractId.fromString("0.0.14978939");
+const operatorId = "0.0.14176487";
+const operatorKey =
+  "302e020100300506032b65700422042074b02c87eb32e0bfc9ea4bb0e70461ee07b8c2692fcd79e5e58b001a2ee6e743";
+const client = Client.forTestnet().setOperator(
+  AccountId.fromString(operatorId),
+  PrivateKey.fromString(operatorKey)
+);
+
 const keepData = {
   topic: "",
   pairingString: "",
@@ -63,12 +44,11 @@ export const pairHashpack = async () => {
   initData = await hashconnect.init(appMetadata, "testnet", false);
   keepData.privateKey = initData.privKey;
 
-  let state = await hashconnect.connect();
-  keepData.topic = state.topic;
+  keepData.topic = await hashconnect.connect();
   console.log(`Topic: ${keepData.topic}`);
 
   keepData.pairingString = hashconnect.generatePairingString(
-    state,
+    keepData.topic,
     "testnet",
     false
   );
@@ -80,7 +60,8 @@ export const pairHashpack = async () => {
   hashconnect.pairingEvent.once((pairingData) => {
     pairingData.accountIds.forEach((id) => {
       keepData.accountId = id;
-      console.log(keepData.accountId);
+      console.log(`Account ID: ${keepData.accountId}`);
+      console.log(`Contract ID: ${contractId}`);
 
       const accountId = document.getElementById("accountId");
       accountId.innerHTML = pairingData.accountIds[0];
@@ -98,15 +79,8 @@ export const contractSigning = async () => {
       keepData.topic,
       keepData.accountId
     );
+    console.log(keepData.accountId);
     const signer = hashconnect.getSigner(provider);
-
-    const transaction = await new TransferTransaction()
-      .addHbarTransfer(AccountId.fromString(keepData.accountId), -1)
-      .addHbarTransfer(AccountId.fromString(keepData.accountId), 1)
-      .freezeWithSigner(signer);
-
-    const response = await transaction.executeWithSigner(signer);
-    console.log(response);
 
     const sendHbarTx = await new ContractExecuteTransaction()
       .setContractId(contractId)
@@ -122,48 +96,56 @@ export const contractSigning = async () => {
   }
 };
 
-//Please don't delete these line i commented below. I'm working on them
+export const checkContractBalance = async () => {
+  try {
+    const provider = hashconnect.getProvider(
+      "testnet",
+      keepData.topic,
+      keepData.accountId
+    );
+    const signer = hashconnect.getSigner(provider);
+    const queryTx = new ContractCallQuery()
+      .setContractId(contractId)
+      .setGas(100000)
+      .setFunction("viewBalance");
 
-// export const authenticateUser = async () => {
-//   const payload = {
-//     url: window.location.hostname,
-//     data: {
-//       token: "fufhr9e84hf9w8fehw9e8fhwo9e8fw938fw3o98fhjw3of",
-//     },
-//   };
+    const response = await queryTx.execute(client);
+    const balance = response.getUint256(0);
 
-//   const hashconnectData = JSON.parse(window.localStorage.hashconnectData);
-//   console.log(hashconnectData);
+    console.log(`Balance: ${balance}`);
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-//   const res = await fetch("http://localhost:8443/sendAuth");
-//   const { signingData } = await res.json();
+//create pool
+export const createPool = async (createGoalAmount, createInterestRate) => {
+  try {
+    const provider = hashconnect.getProvider(
+      "testnet",
+      keepData.topic,
+      keepData.accountId
+    );
+    console.log(keepData.accountId);
+    const signer = hashconnect.getSigner(provider);
 
-//   const serverSigAsArr = Object.values(signingData.serverSignature);
-//   const serverSigAsBuffer = Buffer.from(serverSigAsArr);
+    const creatPoolTx = new ContractExecuteTransaction()
+      .setContractId(contractId)
+      .setGas(100000)
+      .setFunction(
+        "createPool",
+        new ContractFunctionParameters()
+          .addUint256(createGoalAmount)
+          .addUint256(createInterestRate)
+      );
+    // .freezeWithSigner(signer);
 
-//   let auth = await hashconnect.authenticate(
-//     hashconnectData.topic,
-//     hashconnectData.pairingData[0].accountIds[0],
-//     signingData.serverSigningAccount,
-//     serverSigAsBuffer,
-//     payload
-//   );
-
-//   const receiveAuthData = {
-//     signingAccount: hashconnectData.pairingData[0].accountIds[0],
-//     auth,
-//   };
-
-//   const res2 = await fetch("http://localhost:8443/getAuth", {
-//     method: "POST",
-//     mode: "cors",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify(receiveAuthData),
-//   });
-
-//   const { authMessage } = await res2.json();
-
-//   console.log(authMessage);
-// };
+    const createPoolSubmit = await creatPoolTx.execute(client);
+    const createPoolRx = await createPoolSubmit.getReceipt(client);
+    console.log(`- Contract function call status: ${createPoolRx.status} \n`);
+  } catch (error) {
+    console.log(createGoalAmount, createInterestRate);
+    console.log(error);
+    alert(error);
+  }
+};

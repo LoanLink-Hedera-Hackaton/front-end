@@ -29,10 +29,14 @@ function App() {
             path="/dashboard/pool/collateral"
             element={<CollateralsDetails />}
           />
-          <Route path="/dashboard/payment" element={<DashPayment />} />
+          <Route
+            //  path="/dashboard/payment"
+            element={<DashPayment />}
+          />
           <Route path="/dashboard/profile" element={<DashProfile />} />
           <Route path="*" element={<Error />} />{" "}
         </Route>
+
         <Route path="*" element={<Error />} />
       </Routes>
     </Router>

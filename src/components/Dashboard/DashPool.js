@@ -23,6 +23,7 @@ import realEstate from "../../assets/realEstate.svg";
 import { BiListUl } from "react-icons/bi";
 import "react-calendar/dist/Calendar.css";
 import DashFooter from "../DashboardComponents/DashFooter";
+import DashSide from "../DashboardComponents/DashSide";
 
 const DashPool = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,6 +49,7 @@ const DashPool = () => {
   }, [prevScrollPos]);
   return (
     <>
+      <DashSide />
       <section className="dashpool-section">
         <div className="dashpool">
           <div className={`${isHidden ? "hide" : ""} poolTitle`}>

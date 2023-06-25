@@ -8,7 +8,7 @@ const GlobalDashboardLayout = () => {
   return (
     <>
       <DashNav />
-      <DashSide />
+      {/* <DashSide /> */}
       <div style={{ height: "80vh" }}>
         <div style={{ height: "100%", overflowY: "scroll" }}>
           <Outlet />
