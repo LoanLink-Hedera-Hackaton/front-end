@@ -7,13 +7,11 @@ import {
   ModalContent,
   ModalHeader,
   ModalOverlay,
-  Tooltip,
   useDisclosure,
 } from "@chakra-ui/react";
 import Bank from "../../assets/Bank.svg";
 import Hedera from "../../assets/HederaRepay.svg";
 import RepaymentHand from "../../assets/repayment-hand.svg";
-import { BsFiles } from "react-icons/bs";
 import { openHashpack } from "../hashconnect";
 // import SuccessPaymentModal from "./SuccessPaymentModal";
 
@@ -82,7 +80,7 @@ const PaymentOptionsModal = () => {
             alignItems={"center"}
             justifyContent={"center"}
           >
-            Repayment Options
+            Bank Card Repayments
           </ModalHeader>
           <ModalBody>
             <div className="repaymentHand">
@@ -95,35 +93,24 @@ const PaymentOptionsModal = () => {
             <div className="outer-transfer">
               <div className="transfer" style={{ marginTop: "-40px" }}>
                 <div className="options">
-                  <label>Transfer to Bank</label>
-                  <input placeholder="0112244344" ref={inputRef} />
-                </div>
-                <div className="files">
-                  <Tooltip label="Copy!" aria-label="A tooltip">
-                    <BsFiles onClick={copyText} />
-                  </Tooltip>
-                </div>
-                <div className="transfer-text">
-                  <p>Make a bank transfer to this email account</p>
+                  <label>Card Number</label>
+                  <input placeholder="Enter Card Number" ref={inputRef} />
                 </div>
               </div>
               <div className="transfer">
                 <div className="options">
-                  <label>Transfer to Wallet</label>
-                  <input placeholder="0112244344" ref={inputRef2} />
+                  <label>Year</label>
+                  <input placeholder="Enter Card month" ref={inputRef2} />
                 </div>
+              </div>
 
-                <div className="files">
-                  <Tooltip label="Copy!" aria-label="A tooltip">
-                    <BsFiles onClick={copyText2} />
-                  </Tooltip>
-                </div>
-                <div className="transfer-text">
-                  <p>Make a bank transfer to this email account</p>
+              <div className="transfer">
+                <div className="options">
+                  <label>CVV</label>
+                  <input placeholder="Enter card CVV" ref={inputRef2} />
                 </div>
               </div>
               <div className="verify">
-                <Input placeholder="Enter account ID or account Number" />
                 {/* <SuccessPaymentModal /> */}
                 <button className="verify-button" onClick={fetchData}>
                   Pay

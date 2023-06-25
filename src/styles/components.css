@@ -497,6 +497,12 @@
 }
 
 /*Bank popup*/
+.outer-transfer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .transfer {
   display: flex;
   justify-content: center;
@@ -507,14 +513,17 @@
 
 .options {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
 }
 .transfer input {
   width: 244px;
   height: 40px;
   outline: none;
   padding-left: 30px;
-  background: rgba(208, 216, 227, 0.41);
+  /* background: rgba(208, 216, 227, 0.41); */
   border: 0.5px solid rgba(68, 82, 102, 0.51);
   border-radius: 5px;
 }
