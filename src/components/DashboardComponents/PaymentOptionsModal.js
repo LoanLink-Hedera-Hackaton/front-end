@@ -14,7 +14,8 @@ import Bank from "../../assets/Bank.svg";
 import Hedera from "../../assets/HederaRepay.svg";
 import RepaymentHand from "../../assets/repayment-hand.svg";
 import { BsFiles } from "react-icons/bs";
-import SuccessPaymentModal from "./SuccessPaymentModal";
+import { openHashpack } from "../hashconnect";
+// import SuccessPaymentModal from "./SuccessPaymentModal";
 
 const PaymentOptionsModal = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -33,6 +34,23 @@ const PaymentOptionsModal = () => {
       document.execCommand("copy");
     }
   };
+
+  const fetchData = async () => {
+    try {
+      const data = await fetch(
+        "https://loanlink-backend.onrender.com/api/charge"
+      );
+
+      const response = await data.json();
+      // console.log(response);
+      const redirectLink = response.meta.authorization.redirect;
+      console.log(redirectLink);
+      window.open(redirectLink, "_blank");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       <div className="payment-options">
@@ -43,7 +61,7 @@ const PaymentOptionsModal = () => {
           </Button>
         </div>
         <div className="repay">
-          <Button onClick={onOpen}>
+          <Button onClick={openHashpack}>
             <img src={Hedera} alt="Hedera" />
             <p>Repay with Hedera</p>
           </Button>
@@ -106,7 +124,10 @@ const PaymentOptionsModal = () => {
               </div>
               <div className="verify">
                 <Input placeholder="Enter account ID or account Number" />
-                <SuccessPaymentModal />
+                {/* <SuccessPaymentModal /> */}
+                <button className="verify-button" onClick={fetchData}>
+                  Pay
+                </button>
               </div>
             </div>
           </ModalBody>

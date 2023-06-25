@@ -21,7 +21,6 @@ const DashSide = () => {
         <div className="first">
           <div className="icon">
             <Link
-              to={"/dashboard"}
               onClick={() => handleActivePage("home")}
               className={`link ${activePage === "home" ? "active-text" : ""}`}
             >
@@ -40,11 +39,11 @@ const DashSide = () => {
             >
               {activePage === "pool" ? (
                 <>
-                  <img src={sidePoolFill} alt="Pool" /> Profile
+                  <img src={sidePoolFill} alt="Pool" /> Pools
                 </>
               ) : (
                 <>
-                  <img src={sidePool} alt="Pool" /> Profile
+                  <img src={sidePool} alt="Pool" /> Pools
                 </>
               )}
             </Link>

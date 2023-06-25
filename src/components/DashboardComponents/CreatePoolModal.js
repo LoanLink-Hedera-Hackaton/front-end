@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import {
+  Alert,
+  AlertIcon,
   Button,
   Modal,
   ModalContent,
@@ -14,6 +16,7 @@ import {
   // checkContractBalance,
   // contractSigning,
   createPool,
+  // createPoolStatus,
 } from "../hashconnect";
 
 export let createGoalAmount;
@@ -23,6 +26,7 @@ const CreatePoolModal = () => {
 
   const [goalAmount, setGoalAmount] = useState("");
   const [interestRate, setInterestRate] = useState("");
+  const [createPoolStatus, setCreatePoolStatus] = useState(false);
 
   const handleGoal = (event) => {
     setGoalAmount(event.target.value);
@@ -30,6 +34,15 @@ const CreatePoolModal = () => {
   const handleInterest = (event) => {
     setInterestRate(event.target.value);
   };
+
+  //handle image submission
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const handleImageUpload = (event) => {
+    const file = event.target.files[0]; // Get the first selected file
+    setSelectedImage(file);
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     // Do something with the input value
@@ -38,8 +51,21 @@ const CreatePoolModal = () => {
     console.log("Interest Rate:", interestRate);
     createInterestRate = interestRate;
 
-    await createPool(createGoalAmount, createInterestRate);
+    //run the create pool command
+
+    const createPoolFunc = async () => {
+      try {
+        await createPool(createGoalAmount, createInterestRate);
+        setCreatePoolStatus(true);
+        console.log(createPoolStatus);
+      } catch (error) {
+        setCreatePoolStatus(false);
+        console.log(error);
+      }
+    };
+    createPoolFunc();
   };
+
   return (
     <>
       <Button
@@ -108,7 +134,7 @@ const CreatePoolModal = () => {
                 <div className="input-details">
                   <BiCloudUpload className="cloud" />
                   <label>Add Image</label>
-                  <input />
+                  <input type="file" onChange={handleImageUpload} />
                 </div>
 
                 <div className="input-details">
@@ -146,7 +172,26 @@ const CreatePoolModal = () => {
             </div>
           </form>
 
-          <div className="modal-footer"></div>
+          <div className="modal-footer">
+            <p>STATUS</p>
+            {createPoolStatus ? (
+              <>
+                {createPoolStatus ? (
+                  <Alert status="success" variant="left-accent">
+                    <AlertIcon />
+                    Pool created successfully
+                  </Alert>
+                ) : (
+                  <Alert status="error" variant="left-accent">
+                    <AlertIcon />
+                    Error occurred!!
+                  </Alert>
+                )}
+              </>
+            ) : (
+              <></>
+            )}
+          </div>
         </ModalContent>
       </Modal>
     </>

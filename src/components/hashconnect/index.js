@@ -119,6 +119,7 @@ export const checkContractBalance = async () => {
 };
 
 //create pool
+export let createPoolStatus;
 export const createPool = async (createGoalAmount, createInterestRate) => {
   try {
     const provider = hashconnect.getProvider(
@@ -142,10 +143,40 @@ export const createPool = async (createGoalAmount, createInterestRate) => {
 
     const createPoolSubmit = await creatPoolTx.execute(client);
     const createPoolRx = await createPoolSubmit.getReceipt(client);
-    console.log(`- Contract function call status: ${createPoolRx.status} \n`);
+    createPoolStatus = createPoolRx.status;
+    console.log(`- Contract function call status: ${createPoolStatus} \n`);
+    return createPoolStatus;
   } catch (error) {
     console.log(createGoalAmount, createInterestRate);
     console.log(error);
     alert(error);
   }
+};
+
+export const openHashpack = async () => {
+  initData = await hashconnect.init(appMetadata, "testnet", false);
+  keepData.privateKey = initData.privKey;
+
+  keepData.topic = await hashconnect.connect();
+  console.log(`Topic: ${keepData.topic}`);
+
+  keepData.pairingString = hashconnect.generatePairingString(
+    keepData.topic,
+    "testnet",
+    false
+  );
+  const result = hashconnect.findLocalWallets();
+  console.log(result + "result");
+
+  hashconnect.connectToLocalWallet(keepData.pairingString);
+
+  hashconnect.pairingEvent.once((pairingData) => {
+    pairingData.accountIds.forEach((id) => {
+      keepData.accountId = id;
+      console.log(`Account ID: ${keepData.accountId}`);
+      console.log(`Contract ID: ${contractId}`);
+    });
+  });
+  console.log(keepData);
+  return keepData;
 };

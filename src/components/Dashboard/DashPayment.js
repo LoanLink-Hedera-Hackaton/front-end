@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../../styles/components.css";
-import DashSide from "../DashboardComponents/DashSide";
 
 const DashPayment = () => {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    // Simulating an asynchronous operation
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, []);
   return (
     <>
-      <DashSide />
       <section className="dashpayment">
         <div> Dashboard payments</div>
       </section>

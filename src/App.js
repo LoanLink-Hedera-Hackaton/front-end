@@ -22,7 +22,7 @@ function App() {
         </Route>
 
         <Route path="" element={<GlobalDashboardLayout />}>
-          <Route path="/dashboard" element={<DashHome />} />
+          {/* <Route path="/dashboard" element={<DashHome />} /> */}
           <Route path="/dashboard/pool" element={<DashPool />} />
           <Route path="/dashboard/pool/request" element={<RequestLoan />} />
           <Route

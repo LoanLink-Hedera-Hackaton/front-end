@@ -26,7 +26,7 @@ const Home = () => {
                 bg: "#4278c9",
               }}
             >
-              <Link to={"/dashboard"}>Get Started</Link>
+              <Link to={"/dashboard/profile"}>Get Started</Link>
             </Button>
           </div>
           <div className="powered">

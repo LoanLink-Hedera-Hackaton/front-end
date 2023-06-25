@@ -75,6 +75,7 @@ const AddFunds = () => {
           >
             <Button
               borderRadius={"5px"}
+              onClick={onClose}
               border={"0.5px solid rgba(68, 82, 102, 0.51)"}
               background={"rgba(217, 217, 217, 0.00)"}
               width={"155px"}
@@ -85,7 +86,6 @@ const AddFunds = () => {
             </Button>
             <Button
               background={"#2774E8"}
-              onClick={onClose}
               width={"155px"}
               height={"26px"}
               padding={"20px"}

@@ -715,6 +715,7 @@
 
 .modal-footer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
@@ -723,6 +724,10 @@
   height: 134px;
   background: rgba(221, 188, 17, 0.08);
   border-radius: 10px;
+}
+.modal-footer p {
+  font-weight: 500;
+  font-size: 20px;
 }
 /*colletaral-details component*/
 .colletaral-details {

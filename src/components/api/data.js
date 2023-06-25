@@ -1,0 +1,50 @@
+[
+  {
+    status: "success",
+    message: "Charge initiated",
+    data: {
+      id: 4421420,
+      tx_ref: "example01",
+      flw_ref: "FLW-MOCK-43568ee683cbe107c346b34077ff3086",
+      device_fingerprint: "N/A",
+      amount: 100,
+      charged_amount: 100,
+      app_fee: 3.8,
+      merchant_fee: 0,
+      processor_response: "Approved. Successful",
+      auth_model: "VBVSECURECODE",
+      currency: "NGN",
+      ip: "52.209.154.143",
+      narration: "CARD Transaction ",
+      status: "pending",
+      payment_type: "card",
+      plan: null,
+      fraud_status: "ok",
+      charge_type: "normal",
+      created_at: "2023-06-25T15:18:46.000Z",
+      account_id: 1694928,
+      customer: {
+        id: 2112398,
+        phone_number: "09000000000",
+        name: "Flutterwave Developers",
+        email: "developers@flutterwavego.com",
+        created_at: "2023-06-21T00:06:51.000Z",
+      },
+      card: {
+        first_6digits: "424242",
+        last_4digits: "4242",
+        issuer: "VISA  CREDIT",
+        country: "US",
+        type: "VISA",
+        expiry: "09/20",
+      },
+    },
+    meta: {
+      authorization: {
+        mode: "redirect",
+        redirect:
+          "https://ravesandboxapi.flutterwave.com/mockvbvpage?ref=FLW-MOCK-43568ee683cbe107c346b34077ff3086&code=00&message=Approved. Successful&receiptno=RN1687706326047",
+      },
+    },
+  },
+];
